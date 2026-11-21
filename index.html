@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Odda Dental — Dental Supplies, Instruments & Kits in Egypt</title>
+<meta name="description" content="Premium dental instruments, restorative materials, clinical supplies, and curated student packages engineered for precision." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#101828',
+          brand: {
+            50:  '#F0FAF9',
+            100: '#D9F2F0',
+            200: '#B3E5E1',
+            500: '#14A098',
+            600: '#0E837C',
+            700: '#0C6B66',
+            900: '#0B3B38',
+          },
+        },
+        fontFamily: { sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        boxShadow: {
+          soft: '0 12px 40px -12px rgba(16,24,40,.12)',
+          lift: '0 24px 48px -16px rgba(16,24,40,.18)',
+        },
+        keyframes: {
+          marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+        },
+        animation: { marquee: 'marquee 30s linear infinite' },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F8FAFC; color: #101828; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+
+<body class="min-h-screen text-[15px]">
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50">
+  <div class="mx-auto max-w-7xl px-4 pt-4 sm:px-6">
+    <div class="flex h-16 items-center gap-4 rounded-2xl bg-white/90 px-4 shadow-soft ring-1 ring-black/5 backdrop-blur-md sm:px-5">
+
+      <button class="grid h-10 w-10 place-items-center rounded-full transition hover:bg-slate-100 md:hidden" aria-label="Open menu"
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <a href="#" class="flex items-center gap-2.5">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-base font-extrabold text-white">O</span>
+        <span class="text-lg font-extrabold tracking-tight">Odda Dental</span>
+      </a>
+
+      <nav class="ml-4 hidden items-center gap-1 text-sm font-medium md:flex">
+        <a href="#" class="rounded-full px-4 py-2 transition hover:bg-slate-100">Home</a>
+        <a href="#collections" class="rounded-full px-4 py-2 text-slate-500 transition hover:bg-slate-100 hover:text-ink">Collections</a>
+        <a href="#student-kits" class="rounded-full px-4 py-2 text-slate-500 transition hover:bg-slate-100 hover:text-ink">Student Kits</a>
+        <a href="#" class="rounded-full px-4 py-2 text-slate-500 transition hover:bg-slate-100 hover:text-ink">About Us</a>
+        <a href="#" class="rounded-full px-4 py-2 text-slate-500 transition hover:bg-slate-100 hover:text-ink">FAQ</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-1.5">
+        <button class="grid h-10 w-10 place-items-center rounded-full transition hover:bg-slate-100" aria-label="Search">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="hidden h-10 w-10 place-items-center rounded-full transition hover:bg-slate-100 sm:grid" aria-label="Account">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+        </button>
+        <button class="relative grid h-10 w-10 place-items-center rounded-full bg-ink text-white transition hover:bg-brand-700" aria-label="Cart">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="absolute -right-0.5 -top-0.5 grid h-4 w-4 place-items-center rounded-full bg-brand-500 text-[9px] font-bold text-white ring-2 ring-white">2</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mt-2 hidden rounded-2xl bg-white p-3 shadow-soft ring-1 ring-black/5 md:hidden">
+      <nav class="flex flex-col text-sm font-medium">
+        <a href="#" class="rounded-xl px-4 py-3 hover:bg-slate-100">Home</a>
+        <a href="#collections" class="rounded-xl px-4 py-3 text-slate-500 hover:bg-slate-100">Collections</a>
+        <a href="#student-kits" class="rounded-xl px-4 py-3 text-slate-500 hover:bg-slate-100">Student Kits</a>
+        <a href="#" class="rounded-xl px-4 py-3 text-slate-500 hover:bg-slate-100">About Us</a>
+        <a href="#" class="rounded-xl px-4 py-3 text-slate-500 hover:bg-slate-100">FAQ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="mx-auto max-w-7xl px-4 sm:px-6">
+
+<!-- ============ HERO ============ -->
+<section class="pt-6">
+  <div class="relative overflow-hidden rounded-[2.5rem] bg-brand-900">
+    <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1920/v1784802950/odda/uploads/admin-1784802948469-5020.webp"
+         alt="Modern dental practice" class="absolute inset-0 h-full w-full object-cover opacity-45" />
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-900/90 via-brand-900/55 to-transparent"></div>
+
+    <div class="relative px-7 py-16 sm:px-12 sm:py-24 lg:px-16 lg:py-28">
+      <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white/90 ring-1 ring-white/20 backdrop-blur-sm">
+        <span class="h-1.5 w-1.5 rounded-full bg-brand-200"></span>
+        Trusted by dental students across Egypt
+      </span>
+      <h1 class="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl">
+        Everything Dentistry. One Brand.
+      </h1>
+      <p class="mt-5 max-w-lg text-sm leading-relaxed text-white/70 sm:text-base">
+        Clinical precision meets premium care. Instruments, consumables and curated student packages — engineered for your practice, delivered to your door.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#bestsellers" class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-ink transition hover:bg-brand-100">
+          Shop now
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a href="#student-kits" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-8 py-3.5 text-sm font-bold text-white ring-1 ring-white/25 backdrop-blur-sm transition hover:bg-white/20">
+          Student kits
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST PILLS ============ -->
+<section class="flex flex-wrap items-center justify-center gap-3 py-8">
+  <span class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold shadow-soft ring-1 ring-black/5">
+    <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>
+    Cash on delivery
+  </span>
+  <span class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold shadow-soft ring-1 ring-black/5">
+    <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+    InstaPay accepted
+  </span>
+  <span class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold shadow-soft ring-1 ring-black/5">
+    <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>
+    Ships to every governorate
+  </span>
+  <span class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold shadow-soft ring-1 ring-black/5">
+    <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+    Certified supplies
+  </span>
+</section>
+
+<!-- ============ BESTSELLERS ============ -->
+<section id="bestsellers" class="py-8">
+  <div class="mb-8 flex items-end justify-between">
+    <div>
+      <p class="mb-1.5 text-xs font-bold uppercase tracking-widest text-brand-600">Most wanted</p>
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Bestsellers</h2>
+    </div>
+    <a href="#" class="group hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold shadow-soft ring-1 ring-black/5 transition hover:ring-brand-500 sm:inline-flex">
+      View all
+      <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div id="grid-1" class="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1791828960/odda/uploads/budhhwllvlk37ugepsoe.jpg" alt="Plastic Stickers (Waterproof)" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        <span class="absolute left-3 top-3 rounded-full bg-ink px-3 py-1 text-[11px] font-bold text-white">-44%</span>
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Plastic Stickers (Waterproof)">Plastic Stickers (Waterproof)</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 45.00</span>
+          <span class="text-xs font-medium text-slate-400 line-through">EGP 80.00</span>
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1785796692/odda/uploads/admin-1785796674454-271.jpg" alt="Dental Wallpaper" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        <span class="absolute left-3 top-3 rounded-full bg-ink px-3 py-1 text-[11px] font-bold text-white">-33%</span>
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Dental Wallpaper">Dental Wallpaper</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 300.00</span>
+          <span class="text-xs font-medium text-slate-400 line-through">EGP 450.00</span>
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787254536/odda/uploads/w25vxc9qx6ydaylmrxp3.jpg" alt="Disposable Protective Gown" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Disposable Protective Gown">Disposable Protective Gown</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 15.00</span>
+          
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787275852/odda/uploads/e2ixq4epgdxzowq1nc2u.jpg" alt="Sterilization Pouches Size 7 · 25 pcs" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Sterilization Pouches Size 7 · 25 pcs">Sterilization Pouches Size 7 · 25 pcs</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 20.00</span>
+          
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784805159/odda/uploads/admin-1784805157449-8828.jpg" alt="Pink Acrostone" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Pink Acrostone">Pink Acrostone</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 355.00</span>
+          
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787327914/odda/uploads/xytalhdcpkolsaekqcen.jpg" alt="Pediatric Yousi Cast Tooth" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Pediatric Yousi Cast Tooth">Pediatric Yousi Cast Tooth</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 22.00</span>
+          
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1786071943/odda/uploads/admin-1786071943387-8795.jpg" alt="Stainless-Steel Orthodontic Wire 0.5mm" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Stainless-Steel Orthodontic Wire 0.5mm">Stainless-Steel Orthodontic Wire 0.5mm</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 10.00</span>
+          
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div class="group rounded-3xl bg-white p-3 shadow-soft ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1786070798/odda/uploads/admin-1786070797358-1670.jpg" alt="Autoclavable Plastic Tray" class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        
+      </div>
+      <div class="px-2 pb-2 pt-3.5">
+        <h3 class="truncate text-sm font-bold" title="Autoclavable Plastic Tray">Autoclavable Plastic Tray</h3>
+        <div class="mt-1.5 flex items-center gap-2">
+          <span class="text-sm font-extrabold text-brand-700">EGP 35.00</span>
+          
+        </div>
+        <button class="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-slate-100 py-2.5 text-xs font-bold transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPLIT COLLECTIONS ============ -->
+<section id="collections" class="py-8">
+  <div class="mb-8">
+    <p class="mb-1.5 text-xs font-bold uppercase tracking-widest text-brand-600">Collections</p>
+    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Where to next?</h2>
+  </div>
+  <div class="grid gap-5 sm:grid-cols-2">
+    <a href="#student-kits" class="group relative overflow-hidden rounded-[2rem] shadow-soft">
+      <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808660/odda/uploads/admin-1784808658365-9137.jpg"
+           alt="Shop by university" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent"></div>
+      <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+        <div>
+          <p class="text-2xl font-extrabold text-white">For students</p>
+          <p class="mt-1 text-sm text-white/70">Kits matched to your faculty list</p>
+        </div>
+        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-ink transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="#" class="group relative overflow-hidden rounded-[2rem] shadow-soft">
+      <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808781/odda/uploads/admin-1784808760213-7840.png"
+           alt="Odda accessories" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent"></div>
+      <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+        <div>
+          <p class="text-2xl font-extrabold text-white">For clinics</p>
+          <p class="mt-1 text-sm text-white/70">Everyday supplies &amp; accessories</p>
+        </div>
+        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-ink transition group-hover:bg-brand-600 group-hover:text-white">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ STUDENT KITS BANNER ============ -->
+<section id="student-kits" class="py-8">
+  <div class="grid items-center gap-8 overflow-hidden rounded-[2.5rem] bg-brand-50 ring-1 ring-brand-100 lg:grid-cols-2">
+    <div class="px-7 py-12 sm:px-12 lg:py-16">
+      <span class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-4 py-1.5 text-xs font-bold text-white">Student equipment</span>
+      <h2 class="mt-5 text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">Your semester kit,<br />sorted in one click.</h2>
+      <p class="mt-4 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+        Pick your university, get the exact instruments your faculty listed — checked, packed, and delivered before your first session. No more hunting piece by piece.
+      </p>
+      <a href="#" class="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-3.5 text-sm font-bold text-white transition hover:bg-brand-700">
+        Build my kit
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="h-full p-4 lg:p-6">
+      <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808705/odda/uploads/admin-1784808705101-2766.jpg"
+           alt="Odda wears and student gear" class="h-full w-full rounded-[1.75rem] object-cover" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="py-8 pb-14">
+  <div class="mb-8 flex items-end justify-between">
+    <div>
+      <p class="mb-1.5 text-xs font-bold uppercase tracking-widest text-brand-600">Reviews</p>
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">What they're saying</h2>
+    </div>
+    <div class="flex gap-2">
+      <button class="grid h-10 w-10 place-items-center rounded-full bg-white shadow-soft ring-1 ring-black/5 transition hover:bg-ink hover:text-white" aria-label="Previous reviews"
+        onclick="document.getElementById('review-row').scrollBy({left:-340,behavior:'smooth'})">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6 6-6-6 6-6"/></svg>
+      </button>
+      <button class="grid h-10 w-10 place-items-center rounded-full bg-white shadow-soft ring-1 ring-black/5 transition hover:bg-ink hover:text-white" aria-label="Next reviews"
+        onclick="document.getElementById('review-row').scrollBy({left:340,behavior:'smooth'})">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="review-row" class="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+
+    <figure class="w-[300px] shrink-0 snap-start rounded-3xl bg-white p-6 shadow-soft ring-1 ring-black/5 sm:w-[340px]">
+      <div class="flex text-amber-400">
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">"Got my whole operative kit in one box before the semester started. Every item on the faculty list was there."</blockquote>
+      <figcaption class="mt-5 flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">SA</span>
+        <div>
+          <p class="text-sm font-bold">Salma A.</p>
+          <p class="text-xs text-slate-400">3rd year, Faculty of Dentistry</p>
+        </div>
+      </figcaption>
+    </figure>
+
+    <figure class="w-[300px] shrink-0 snap-start rounded-3xl bg-white p-6 shadow-soft ring-1 ring-black/5 sm:w-[340px]">
+      <div class="flex text-amber-400">
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">"Finally a store that gets what a clinic actually needs. Quality is a step above the local market, and cash on delivery makes it easy."</blockquote>
+      <figcaption class="mt-5 flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">MH</span>
+        <div>
+          <p class="text-sm font-bold">Dr. Mostafa H.</p>
+          <p class="text-xs text-slate-400">Private clinic, Cairo</p>
+        </div>
+      </figcaption>
+    </figure>
+
+    <figure class="w-[300px] shrink-0 snap-start rounded-3xl bg-white p-6 shadow-soft ring-1 ring-black/5 sm:w-[340px]">
+      <div class="flex text-amber-400">
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+      </div>
+      <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">"Chose my university, paid with InstaPay, kit arrived in three days. Easiest thing about dental school so far."</blockquote>
+      <figcaption class="mt-5 flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">OK</span>
+        <div>
+          <p class="text-sm font-bold">Omar K.</p>
+          <p class="text-xs text-slate-400">2nd year, Faculty of Dentistry</p>
+        </div>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="mt-4">
+  <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6">
+    <div class="rounded-[2.5rem] bg-ink px-7 py-14 text-white sm:px-12">
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div>
+          <a href="#" class="flex items-center gap-2.5">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-500 text-base font-extrabold text-white">O</span>
+            <span class="text-lg font-extrabold tracking-tight">Odda Dental</span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
+            Premium dental instruments, clinical supplies, and curated student packages engineered for precision.
+          </p>
+          <form class="mt-6 flex max-w-xs items-center gap-2 rounded-full bg-white/10 p-1.5 ring-1 ring-white/15" onsubmit="return false">
+            <input type="email" required placeholder="Email address"
+              class="w-full bg-transparent px-4 text-sm placeholder:text-white/35 focus:outline-none" />
+            <button type="submit" class="shrink-0 rounded-full bg-brand-500 px-5 py-2.5 text-xs font-bold transition hover:bg-brand-600">Subscribe</button>
+          </form>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-white/40">Client services</h3>
+          <ul class="mt-5 space-y-3 text-sm text-white/65">
+            <li><a href="#" class="transition hover:text-white">Support hub (FAQ)</a></li>
+            <li><a href="#" class="transition hover:text-white">Contact via WhatsApp</a></li>
+            <li><a href="#" class="transition hover:text-white">Terms &amp; policies</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-white/40">Company</h3>
+          <ul class="mt-5 space-y-3 text-sm text-white/65">
+            <li><a href="#" class="transition hover:text-white">About us</a></li>
+            <li><a href="#collections" class="transition hover:text-white">Collections</a></li>
+            <li><a href="#student-kits" class="transition hover:text-white">Student kits</a></li>
+            <li><a href="#bestsellers" class="transition hover:text-white">Bestsellers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-white/40">Socials</h3>
+          <ul class="mt-5 space-y-3 text-sm text-white/65">
+            <li><a href="#" class="transition hover:text-white">Instagram</a></li>
+            <li><a href="#" class="transition hover:text-white">Facebook</a></li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="rounded-full border border-white/20 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white/60">InstaPay</span>
+            <span class="rounded-full border border-white/20 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white/60">COD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-7 text-xs text-white/35 sm:flex-row">
+        <p>&copy; 2026 Odda Dental. All rights reserved.</p>
+        <p>Developed by <span class="font-semibold text-white/60">Karim Elgohary</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
