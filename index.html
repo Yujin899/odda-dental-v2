@@ -29,13 +29,16 @@ tailwind.config = {
 
 <!-- Announcement bar -->
 <div class="bg-ink text-white">
-  <p class="py-2.5 text-center text-xs font-semibold tracking-[0.15em] uppercase">Shipping all over Egypt &nbsp;·&nbsp; Cash on delivery</p>
+  <p class="py-2.5 text-center text-xs font-semibold tracking-[0.15em] uppercase">Shipping all over Egypt &nbsp;&middot;&nbsp; Cash on delivery</p>
 </div>
 
 <!-- Header -->
-<header class="sticky top-0 z-40 bg-white border-b border-line">
+<header id="site-header" class="sticky top-0 z-40 bg-white border-b border-line transition-shadow duration-300">
   <div class="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between">
-    <button aria-label="Search" class="text-ink/70 hover:text-ink transition-colors">
+    <button id="menu-btn" aria-label="Menu" class="md:hidden text-ink/70 hover:text-ink transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <button aria-label="Search" class="hidden md:block text-ink/70 hover:text-ink transition-colors">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/></svg>
     </button>
     <a href="#" class="text-xl font-extrabold tracking-tight">Odda<span class="text-accent">Dental</span></a>
@@ -65,11 +68,43 @@ tailwind.config = {
   </nav>
 </header>
 
+<!-- Mobile drawer -->
+<div id="drawer-overlay" class="fixed inset-0 z-50 bg-ink/40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<aside id="drawer" class="fixed top-0 left-0 z-50 h-full w-72 bg-white -translate-x-full transition-transform duration-300 flex flex-col">
+  <div class="h-16 px-5 flex items-center justify-between border-b border-line">
+    <span class="text-lg font-extrabold tracking-tight">Odda<span class="text-accent">Dental</span></span>
+    <button id="drawer-close" aria-label="Close menu" class="text-ink/60 hover:text-ink transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="flex flex-col px-5 py-4 text-[15px] font-semibold text-ink/80">
+    <a href="#kits" class="py-3 border-b border-line hover:text-accent transition-colors">University Kits</a>
+    <a href="#bestsellers" class="py-3 border-b border-line hover:text-accent transition-colors">Best Selling</a>
+    <a href="#clinical" class="py-3 border-b border-line hover:text-accent transition-colors">Clinical</a>
+    <a href="#collections" class="py-3 border-b border-line hover:text-accent transition-colors">Odda Wears</a>
+    <a href="#collections" class="py-3 border-b border-line hover:text-accent transition-colors">Accessories</a>
+    <a href="#" class="py-3 border-b border-line hover:text-accent transition-colors">About Us</a>
+    <a href="#" class="py-3 border-b border-line hover:text-accent transition-colors">FAQ</a>
+    <a href="#" class="py-3 hover:text-accent transition-colors">Contact</a>
+  </nav>
+</aside>
+
 <main>
-  <!-- Hero: full-bleed photo, no overlay -->
-  <section>
-    <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1920/v1784808660/odda/uploads/admin-1784808658365-9137.jpg"
-         alt="Dental students with their Odda kits" class="w-full aspect-[4/3] sm:aspect-[21/9] object-cover">
+  <!-- Hero: full-bleed crossfading photo slideshow -->
+  <section id="hero" class="relative overflow-hidden bg-surface">
+    <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100" data-slide>
+      <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1920/v1784808660/odda/uploads/admin-1784808658365-9137.jpg"
+           alt="Dental students with their Odda kits" class="w-full h-full object-cover">
+    </div>
+    <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0" data-slide>
+      <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1920/v1784802950/odda/uploads/admin-1784802948469-5020.webp"
+           alt="Odda instruments" class="w-full h-full object-cover">
+    </div>
+    <div class="invisible aspect-[4/3] sm:aspect-[21/9]"></div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      <button class="hero-dot w-2 h-2 rounded-full bg-white transition-opacity" data-dot aria-label="Slide 1"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white opacity-40 transition-opacity" data-dot aria-label="Slide 2"></button>
+    </div>
   </section>
 
   <!-- Kit finder -->
@@ -262,5 +297,60 @@ tailwind.config = {
   </div>
 </footer>
 
+
+<script>
+// Header: subtle shadow once the page scrolls
+const header = document.getElementById('site-header');
+const onScroll = () => header.classList.toggle('shadow-md', window.scrollY > 8);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Mobile drawer
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('drawer-overlay');
+const openDrawer = () => {
+  drawer.classList.remove('-translate-x-full');
+  overlay.classList.remove('opacity-0', 'pointer-events-none');
+  document.body.style.overflow = 'hidden';
+};
+const closeDrawer = () => {
+  drawer.classList.add('-translate-x-full');
+  overlay.classList.add('opacity-0', 'pointer-events-none');
+  document.body.style.overflow = '';
+};
+document.getElementById('menu-btn').addEventListener('click', openDrawer);
+document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+// Hero: slow crossfade slideshow with dots
+const slides = [...document.querySelectorAll('[data-slide]')];
+const dots = [...document.querySelectorAll('[data-dot]')];
+let current = 0, timer;
+function goTo(i) {
+  slides[current].classList.replace('opacity-100', 'opacity-0');
+  dots[current].classList.add('opacity-40');
+  current = i % slides.length;
+  slides[current].classList.replace('opacity-0', 'opacity-100');
+  dots[current].classList.remove('opacity-40');
+}
+function auto() { timer = setInterval(() => goTo(current + 1), 5000); }
+dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(timer); goTo(i); auto(); }));
+auto();
+
+// Gentle reveal for sections below the hero
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.remove('opacity-0', 'translate-y-4');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('main > section:not(#hero)').forEach(s => {
+  s.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
+  observer.observe(s);
+});
+</script>
 </body>
 </html>
