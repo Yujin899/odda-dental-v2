@@ -7,17 +7,18 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
   theme: {
     extend: {
-      fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+      fontFamily: { sans: ['Assistant', 'sans-serif'] },
       colors: {
-        ink: '#0B0B0C',
-        accent: '#0E837C',
-        surface: '#F5F4F2',
-        line: '#E6E5E2',
+        ink: '#121212',
+        accent: '#FF9F1C',
+        surface: '#F9F9F9',
+        tile: '#F7E9E5',
+        line: '#E8E8E8',
       },
     }
   }
@@ -27,303 +28,236 @@ tailwind.config = {
 <body class="bg-white text-ink font-sans antialiased">
 
 <!-- Announcement bar -->
-<div class="border-b border-line">
-  <p class="mx-auto max-w-7xl px-6 py-2.5 text-center text-xs font-medium tracking-wide text-neutral-500">
-    Cash on delivery &nbsp;·&nbsp; InstaPay accepted &nbsp;·&nbsp; Ships to every governorate
-  </p>
+<div class="bg-ink text-white">
+  <p class="py-2.5 text-center text-xs font-semibold tracking-[0.15em] uppercase">Shipping all over Egypt &nbsp;·&nbsp; Cash on delivery</p>
 </div>
 
 <!-- Header -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-line">
-  <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-2">
-      <span class="inline-block w-2.5 h-2.5 rounded-full bg-accent"></span>
-      <span class="text-lg font-extrabold tracking-tight">Odda Dental</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600">
-      <a href="#" class="hover:text-ink transition-colors">Home</a>
-      <a href="#collections" class="hover:text-ink transition-colors">Collections</a>
-      <a href="#kits" class="hover:text-ink transition-colors">Student Kits</a>
-      <a href="#" class="hover:text-ink transition-colors">About Us</a>
-      <a href="#" class="hover:text-ink transition-colors">FAQ</a>
-    </nav>
+<header class="sticky top-0 z-40 bg-white border-b border-line">
+  <div class="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between">
+    <button aria-label="Search" class="text-ink/70 hover:text-ink transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/></svg>
+    </button>
+    <a href="#" class="text-xl font-extrabold tracking-tight">Odda<span class="text-accent">Dental</span></a>
     <div class="flex items-center gap-5">
-      <button aria-label="Search" class="text-neutral-600 hover:text-ink transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/></svg>
-      </button>
-      <button aria-label="Account" class="text-neutral-600 hover:text-ink transition-colors">
+      <button aria-label="Account" class="text-ink/70 hover:text-ink transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM5 21a7 7 0 0114 0"/></svg>
       </button>
-      <button aria-label="Cart" class="relative text-neutral-600 hover:text-ink transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 10-8 0v4M5 8h14l-1 13H6L5 8z"/></svg>
-        <span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-ink text-white text-[10px] font-bold flex items-center justify-center">0</span>
+      <button aria-label="Cart" class="relative text-ink/70 hover:text-ink transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l1 14H5L6 7zm3 0a3 3 0 016 0"/></svg>
+        <span class="absolute -top-1.5 -right-2 min-w-4 h-4 px-0.5 rounded-full bg-accent text-ink text-[10px] font-bold flex items-center justify-center">0</span>
       </button>
     </div>
   </div>
+  <nav class="hidden md:block border-t border-line">
+    <div class="mx-auto max-w-7xl px-5 h-11 flex items-center justify-center gap-7 text-[13px] font-semibold text-ink/80">
+      <a href="#kits" class="hover:text-accent transition-colors flex items-center gap-1">University Kits
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <a href="#bestsellers" class="hover:text-accent transition-colors">Best Selling</a>
+      <a href="#clinical" class="hover:text-accent transition-colors">Clinical</a>
+      <a href="#collections" class="hover:text-accent transition-colors">Odda Wears</a>
+      <a href="#collections" class="hover:text-accent transition-colors">Accessories</a>
+      <a href="#" class="hover:text-accent transition-colors">About Us</a>
+      <a href="#" class="hover:text-accent transition-colors">FAQ</a>
+      <a href="#" class="hover:text-accent transition-colors">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="mx-auto max-w-7xl px-6 pt-8">
-    <div class="overflow-hidden">
-      <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1920/v1784802950/odda/uploads/admin-1784802948469-5020.webp"
-           alt="Modern dental practice" class="w-full aspect-[4/3] sm:aspect-[16/7] object-cover">
-    </div>
-    <div class="max-w-2xl py-12 sm:py-16">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Trusted by dental students across Egypt</p>
-      <h1 class="mt-3 text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05]">Everything Dentistry. One Brand.</h1>
-      <p class="mt-4 text-base text-neutral-500 leading-relaxed">Clinical precision meets premium care. Instruments, consumables and curated student packages, engineered for your practice, delivered to your door.</p>
-      <div class="mt-7 flex items-center gap-6">
-        <a href="#bestsellers" class="inline-flex items-center gap-2 rounded-md bg-ink text-white text-sm font-semibold px-7 py-3.5 hover:bg-accent transition-colors">
-          Shop bestsellers
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-        <a href="#kits" class="text-sm font-semibold underline underline-offset-4 hover:text-accent transition-colors">Student kits</a>
+  <!-- Hero: full-bleed photo, no overlay -->
+  <section>
+    <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1920/v1784808660/odda/uploads/admin-1784808658365-9137.jpg"
+         alt="Dental students with their Odda kits" class="w-full aspect-[4/3] sm:aspect-[21/9] object-cover">
+  </section>
+
+  <!-- Kit finder -->
+  <section id="kits" class="mx-auto max-w-3xl px-5 pt-14 pb-6 text-left">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent">The university kit</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Get the exact kit for your year</h1>
+    <p class="mt-3 text-[15px] text-ink/60">Pick your university and level, and we will show the exact kit your faculty asks for.</p>
+    <div class="mt-6 border border-line rounded-md p-5 sm:p-6">
+      <label for="level" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-ink/50 mb-2">Level</label>
+      <div class="relative">
+        <select id="level" class="w-full appearance-none bg-white border border-line rounded-md px-4 py-3 text-sm font-semibold focus:outline-none focus:border-ink">
+          <option>Select level</option>
+          <option>Level One</option>
+          <option>Level Two</option>
+          <option>Level Three</option>
+          <option>Level Four</option>
+          <option>Level Five</option>
+        </select>
+        <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-ink/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
       </div>
+      <label for="uni" class="block text-[11px] font-bold uppercase tracking-[0.15em] text-ink/50 mt-4 mb-2">University</label>
+      <div class="relative">
+        <select id="uni" class="w-full appearance-none bg-white border border-line rounded-md px-4 py-3 text-sm font-semibold focus:outline-none focus:border-ink">
+          <option>Select university</option>
+          <option>Cairo University</option>
+          <option>Ain Shams University</option>
+          <option>Alexandria University</option>
+          <option>Mansoura University</option>
+          <option>Pharos University</option>
+          <option>Future University</option>
+        </select>
+        <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-ink/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <button class="mt-5 w-full bg-ink text-white text-sm font-bold py-3.5 rounded-md hover:bg-accent hover:text-ink transition-colors">Show my kit</button>
     </div>
   </section>
 
-  <!-- Bestsellers -->
-  <section id="bestsellers" class="mx-auto max-w-7xl px-6 pb-20">
-    <div class="flex items-end justify-between mb-8">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Most wanted</p>
-        <h2 class="mt-2 text-3xl font-extrabold tracking-tight">Bestsellers</h2>
-      </div>
-      <a href="#" class="text-sm font-semibold underline underline-offset-4 hover:text-accent transition-colors">View all</a>
+  <!-- Best selling -->
+  <section id="bestsellers" class="mx-auto max-w-7xl px-5 pt-10 pb-14">
+    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Best Selling</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8">
+      <a href="#" class="block">
+        <div class="bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1791828960/odda/uploads/budhhwllvlk37ugepsoe.jpg" alt="Plastic Stickers (Waterproof)" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Plastic Stickers (Waterproof)</h3>
+        <p class="mt-0.5 text-[13px]"><span class="text-ink/40 line-through">EGP 80.00</span> <span class="font-bold">EGP 45.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1785796692/odda/uploads/admin-1785796674454-271.jpg" alt="Dental Wallpaper" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Dental Wallpaper</h3>
+        <p class="mt-0.5 text-[13px]"><span class="text-ink/40 line-through">EGP 450.00</span> <span class="font-bold">EGP 300.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787254536/odda/uploads/w25vxc9qx6ydaylmrxp3.jpg" alt="Disposable Protective Gown" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Disposable Protective Gown</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 15.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787275852/odda/uploads/e2ixq4epgdxzowq1nc2u.jpg" alt="Sterilization Pouches" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Sterilization Pouches Size 7 · 25 pcs</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 20.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784805159/odda/uploads/admin-1784805157449-8828.jpg" alt="Pink Acrostone" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Pink Acrostone</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 355.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787327914/odda/uploads/xytalhdcpkolsaekqcen.jpg" alt="Pediatric Yousi Cast Tooth" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Pediatric Yousi Cast Tooth</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 22.00</span></p>
+      </a>
     </div>
-
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
-      <!-- Product card template -->
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1791828960/odda/uploads/budhhwllvlk37ugepsoe.jpg" alt="Plastic Stickers (Waterproof)" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Plastic Stickers (Waterproof)</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 45.00</span> <span class="text-neutral-400 line-through">EGP 80.00</span> <span class="text-accent font-semibold text-xs">Save 44%</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1785796692/odda/uploads/admin-1785796674454-271.jpg" alt="Dental Wallpaper" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Dental Wallpaper</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 300.00</span> <span class="text-neutral-400 line-through">EGP 450.00</span> <span class="text-accent font-semibold text-xs">Save 33%</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787254536/odda/uploads/w25vxc9qx6ydaylmrxp3.jpg" alt="Disposable Protective Gown" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Disposable Protective Gown</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 15.00</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787275852/odda/uploads/e2ixq4epgdxzowq1nc2u.jpg" alt="Sterilization Pouches Size 7" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Sterilization Pouches Size 7 · 25 pcs</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 20.00</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784805159/odda/uploads/admin-1784805157449-8828.jpg" alt="Pink Acrostone" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Pink Acrostone</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 355.00</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787327914/odda/uploads/xytalhdcpkolsaekqcen.jpg" alt="Pediatric Yousi Cast Tooth" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Pediatric Yousi Cast Tooth</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 22.00</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1786071943/odda/uploads/admin-1786071943387-8795.jpg" alt="Stainless-Steel Orthodontic Wire" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Stainless-Steel Orthodontic Wire 0.5mm</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 10.00</span></p>
-        </div>
-      </div>
-
-      <div>
-        <div class="relative rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1786070798/odda/uploads/admin-1786070797358-1670.jpg" alt="Autoclavable Plastic Tray" class="w-full aspect-square object-cover">
-        </div>
-        <div class="mt-3">
-          <h3 class="text-sm font-semibold">Autoclavable Plastic Tray</h3>
-          <p class="mt-1 text-sm"><span class="font-bold">EGP 35.00</span></p>
-        </div>
-      </div>
+    <div class="text-center mt-8">
+      <a href="#" class="inline-block bg-ink text-white text-sm font-bold px-10 py-3.5 rounded-md hover:bg-accent hover:text-ink transition-colors">View all</a>
     </div>
   </section>
 
-  <!-- Collections -->
-  <section id="collections" class="mx-auto max-w-7xl px-6 pb-20">
-    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Collections</p>
-    <h2 class="mt-2 text-3xl font-extrabold tracking-tight mb-8">Where to next?</h2>
-    <div class="grid sm:grid-cols-3 gap-5">
-      <a href="#" class="group block">
-        <div class="rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808660/odda/uploads/admin-1784808658365-9137.jpg" alt="Shop by university" class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition-transform duration-500">
-        </div>
-        <div class="mt-3 flex items-center justify-between">
-          <div>
-            <h3 class="text-sm font-bold">Shop by university</h3>
-            <p class="text-xs text-neutral-500 mt-0.5">Kits matched to your faculty list</p>
-          </div>
-          <svg class="w-4 h-4 text-neutral-400 group-hover:text-ink group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+  <!-- Collections tiles -->
+  <section id="collections" class="mx-auto max-w-7xl px-5 pb-14">
+    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Collections</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <a href="#" class="group block bg-tile rounded-md overflow-hidden">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784808660/odda/uploads/admin-1784808658365-9137.jpg" alt="Shop by university" class="w-full aspect-square object-cover group-hover:scale-[1.03] transition-transform duration-500">
+        <div class="px-3 py-2.5 flex items-center justify-between">
+          <span class="text-[13px] font-bold">By university</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </div>
       </a>
-      <a href="#" class="group block">
-        <div class="rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808705/odda/uploads/admin-1784808705101-2766.jpg" alt="Odda wears and student gear" class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition-transform duration-500">
-        </div>
-        <div class="mt-3 flex items-center justify-between">
-          <div>
-            <h3 class="text-sm font-bold">Odda wears</h3>
-            <p class="text-xs text-neutral-500 mt-0.5">Scrubs, lab coats & student gear</p>
-          </div>
-          <svg class="w-4 h-4 text-neutral-400 group-hover:text-ink group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      <a href="#" class="group block bg-tile rounded-md overflow-hidden">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784808705/odda/uploads/admin-1784808705101-2766.jpg" alt="Odda wears" class="w-full aspect-square object-cover group-hover:scale-[1.03] transition-transform duration-500">
+        <div class="px-3 py-2.5 flex items-center justify-between">
+          <span class="text-[13px] font-bold">Odda wears</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </div>
       </a>
-      <a href="#" class="group block">
-        <div class="rounded-lg overflow-hidden bg-surface">
-          <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808781/odda/uploads/admin-1784808760213-7840.png" alt="Odda accessories" class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition-transform duration-500">
-        </div>
-        <div class="mt-3 flex items-center justify-between">
-          <div>
-            <h3 class="text-sm font-bold">Odda accessories</h3>
-            <p class="text-xs text-neutral-500 mt-0.5">Everyday supplies & accessories</p>
-          </div>
-          <svg class="w-4 h-4 text-neutral-400 group-hover:text-ink group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      <a href="#" class="group block bg-tile rounded-md overflow-hidden">
+        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784808781/odda/uploads/admin-1784808760213-7840.png" alt="Odda accessories" class="w-full aspect-square object-cover group-hover:scale-[1.03] transition-transform duration-500">
+        <div class="px-3 py-2.5 flex items-center justify-between">
+          <span class="text-[13px] font-bold">Accessories</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- Student kits banner -->
-  <section id="kits" class="mx-auto max-w-7xl px-6 pb-20">
-    <div class="bg-surface grid md:grid-cols-2 overflow-hidden">
-      <div class="p-10 sm:p-14 flex flex-col justify-center">
-        <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Student kits</p>
-        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Your semester, packed and ready.</h2>
-        <p class="mt-4 text-sm text-neutral-500 leading-relaxed">Curated instrument and consumable bundles for every year of dental school, matched to your university's requirements. One order, everything on the list.</p>
-        <div class="mt-7">
-          <a href="#" class="inline-flex items-center gap-2 rounded-md bg-ink text-white text-sm font-semibold px-7 py-3.5 hover:bg-accent transition-colors">
-            Browse student kits
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="min-h-[280px]">
-        <img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_1200/v1784808705/odda/uploads/admin-1784808705101-2766.jpg" alt="Odda student gear" class="w-full h-full object-cover">
-      </div>
+  <!-- Orders pictures -->
+  <section class="mx-auto max-w-7xl px-5 pb-14">
+    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Orders Pictures</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="overflow-hidden rounded-md"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784808660/odda/uploads/admin-1784808658365-9137.jpg" alt="Odda kit delivery" class="w-full aspect-[3/4] object-cover"></div>
+      <div class="overflow-hidden rounded-md"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784808705/odda/uploads/admin-1784808705101-2766.jpg" alt="Odda wears" class="w-full aspect-[3/4] object-cover"></div>
+      <div class="overflow-hidden rounded-md"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784808781/odda/uploads/admin-1784808760213-7840.png" alt="Odda accessories" class="w-full aspect-[3/4] object-cover"></div>
+      <div class="overflow-hidden rounded-md"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784802950/odda/uploads/admin-1784802948469-5020.webp" alt="Odda instruments" class="w-full aspect-[3/4] object-cover"></div>
     </div>
   </section>
 
-  <!-- Reviews -->
-  <section class="mx-auto max-w-7xl px-6 pb-20">
-    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Reviews</p>
-    <h2 class="mt-2 text-3xl font-extrabold tracking-tight mb-8">What students say</h2>
-    <div class="grid sm:grid-cols-3 gap-5">
-      <figure class="rounded-lg border border-line p-7">
-        <div class="flex gap-0.5 text-ink" aria-label="5 out of 5 stars">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-        </div>
-        <blockquote class="mt-4 text-sm text-neutral-600 leading-relaxed">"My full kit arrived in two days, exactly what our faculty asked for. Quality is honestly better than what seniors bought locally."</blockquote>
-        <figcaption class="mt-4 text-sm font-bold">Mariam S. <span class="font-normal text-neutral-400">· Dentistry, Cairo University</span></figcaption>
-      </figure>
-      <figure class="rounded-lg border border-line p-7">
-        <div class="flex gap-0.5 text-ink" aria-label="5 out of 5 stars">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-        </div>
-        <blockquote class="mt-4 text-sm text-neutral-600 leading-relaxed">"Ordered burs and an acrostone set for lab work. Packaging was clean and everything was sterilization-ready. Cash on delivery made it easy."</blockquote>
-        <figcaption class="mt-4 text-sm font-bold">Omar K. <span class="font-normal text-neutral-400">· Dentistry, Ain Shams</span></figcaption>
-      </figure>
-      <figure class="rounded-lg border border-line p-7">
-        <div class="flex gap-0.5 text-ink" aria-label="5 out of 5 stars">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-        </div>
-        <blockquote class="mt-4 text-sm text-neutral-600 leading-relaxed">"The scrubs fit perfectly and the fabric is proper clinic-grade. I keep coming back for the small stuff too, stickers and trays and all."</blockquote>
-        <figcaption class="mt-4 text-sm font-bold">Salma R. <span class="font-normal text-neutral-400">· Dentistry, Alexandria</span></figcaption>
-      </figure>
+  <!-- Clinical essentials -->
+  <section id="clinical" class="mx-auto max-w-7xl px-5 pb-14">
+    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Clinical Essentials</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
+      <a href="#" class="block">
+        <div class="relative bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1784805159/odda/uploads/admin-1784805157449-8828.jpg" alt="Pink Acrostone" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Pink Acrostone</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 355.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="relative bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1787327914/odda/uploads/xytalhdcpkolsaekqcen.jpg" alt="Pediatric Yousi Cast Tooth" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Pediatric Yousi Cast Tooth</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 22.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="relative bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1786071943/odda/uploads/admin-1786071943387-8795.jpg" alt="Stainless-Steel Orthodontic Wire" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Stainless-Steel Orthodontic Wire 0.5mm</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 10.00</span></p>
+      </a>
+      <a href="#" class="block">
+        <div class="relative bg-surface overflow-hidden"><img src="https://res.cloudinary.com/dealaojo5/image/upload/f_auto,q_auto,w_800/v1786070798/odda/uploads/admin-1786070797358-1670.jpg" alt="Autoclavable Plastic Tray" class="w-full aspect-square object-cover"></div>
+        <p class="mt-2 text-[10px] font-semibold uppercase tracking-wider text-ink/40">Odda Dental</p>
+        <h3 class="text-[13px] font-semibold leading-snug">Autoclavable Plastic Tray</h3>
+        <p class="mt-0.5 text-[13px]"><span class="font-bold">EGP 35.00</span></p>
+      </a>
+    </div>
+    <div class="text-center mt-8">
+      <a href="#" class="inline-block bg-ink text-white text-sm font-bold px-10 py-3.5 rounded-md hover:bg-accent hover:text-ink transition-colors">View all</a>
     </div>
   </section>
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-line">
-  <div class="mx-auto max-w-7xl px-6 py-14 grid gap-10 md:grid-cols-4">
+<footer class="bg-ink text-white">
+  <div class="mx-auto max-w-7xl px-5 py-12 grid gap-10 sm:grid-cols-3">
     <div>
-      <a href="#" class="flex items-center gap-2">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-accent"></span>
-        <span class="text-lg font-extrabold tracking-tight">Odda Dental</span>
-      </a>
-      <p class="mt-4 text-sm text-neutral-500 leading-relaxed">Everything dentistry. One brand. Built for students and clinics across Egypt.</p>
-    </div>
-    <div>
-      <h4 class="text-sm font-bold mb-4">Shop</h4>
-      <ul class="space-y-2.5 text-sm text-neutral-500">
-        <li><a href="#" class="hover:text-ink transition-colors">Bestsellers</a></li>
-        <li><a href="#" class="hover:text-ink transition-colors">Student kits</a></li>
-        <li><a href="#" class="hover:text-ink transition-colors">Collections</a></li>
-        <li><a href="#" class="hover:text-ink transition-colors">New arrivals</a></li>
+      <h4 class="text-sm font-bold uppercase tracking-wider mb-4">Levels</h4>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li><a href="#" class="hover:text-accent transition-colors">Level One kit</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">Level Two kit</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">Level Three kit</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">Level Four kit</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">Level Five kit</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-sm font-bold mb-4">Support</h4>
-      <ul class="space-y-2.5 text-sm text-neutral-500">
-        <li><a href="#" class="hover:text-ink transition-colors">FAQ</a></li>
-        <li><a href="#" class="hover:text-ink transition-colors">Shipping & returns</a></li>
-        <li><a href="#" class="hover:text-ink transition-colors">Contact us</a></li>
-        <li><a href="#" class="hover:text-ink transition-colors">Track your order</a></li>
+      <h4 class="text-sm font-bold uppercase tracking-wider mb-4">Quick links</h4>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li><a href="#" class="hover:text-accent transition-colors">About Us</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">FAQ</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">Contact</a></li>
+        <li><a href="#" class="hover:text-accent transition-colors">Shipping & returns</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-sm font-bold mb-4">Stay in the loop</h4>
-      <p class="text-sm text-neutral-500 mb-4">Drops, restocks and student offers.</p>
-      <form class="flex gap-2">
-        <input type="email" required placeholder="Email address" class="flex-1 min-w-0 rounded-md border border-line px-4 py-2.5 text-sm focus:outline-none focus:border-ink">
-        <button type="submit" class="rounded-md bg-ink text-white text-sm font-semibold px-5 py-2.5 hover:bg-accent transition-colors">Join</button>
-      </form>
+      <h4 class="text-sm font-bold uppercase tracking-wider mb-4">Odda Dental</h4>
+      <p class="text-sm text-white/60 leading-relaxed">Everything dentistry. One brand. Kits, instruments, consumables and wears for dental students across Egypt.</p>
     </div>
   </div>
-  <div class="border-t border-line">
-    <div class="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-400">
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/40">
       <p>© 2026 Odda Dental. All rights reserved.</p>
-      <p>Developed by <span class="font-semibold text-neutral-600">Karim Elgohary</span></p>
+      <p>Developed by <span class="font-semibold text-white/70">Karim Elgohary</span></p>
     </div>
   </div>
 </footer>
